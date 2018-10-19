@@ -4,7 +4,9 @@ from selenium.webdriver.common.keys import Keys
 capabilities = {
     "browserName": "chrome",
     "version": "69.0",
-    "platform": "LINUX"
+    "platform": "LINUX",
+    # "enableVNC": True,
+    # "enableVideo": True,
 }
 
 driver = webdriver.Remote(
@@ -13,6 +15,7 @@ driver = webdriver.Remote(
 )
 
 try:
+    print 'Session ID is: %s' % driver.session_id
     print 'Opening the page...'
     driver.get('http://duckduckgo.com/')
 
